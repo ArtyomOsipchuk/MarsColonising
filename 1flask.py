@@ -93,6 +93,7 @@ def varianty_vibora(planet_name):
                           </body>
                         </html>"""
 
+
 @app.route('/results/<nickname>/<int:level>/<float:rating>')
 def result_of_otbor(nickname, level, rating):
     return f'''<!doctype html>
@@ -115,7 +116,7 @@ def result_of_otbor(nickname, level, rating):
                           </body>
                         </html>'''
 
-@app.route('/')
+
 @app.route('/static')
 def peizaahi_marsa():
     return f'''<!doctype html>
@@ -149,6 +150,32 @@ def peizaahi_marsa():
                             </div>
                           </body>
                         </html>'''
+
+
+@app.route('/')
+def peizaahi_marsa():
+    prof = ''
+    img_adress = 'static/img/sci.png'
+    if 'инженер' in prof.lower():
+        img_adress = 'static/img/ing.png'
+    return f'''<!doctype html>
+                        <html lang="en">
+                          <head>
+                            <meta charset="utf-8">
+                            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+                            <link rel="stylesheet" 
+                            href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+                            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
+                            crossorigin="anonymous">
+                            <title></title>
+                          </head>
+                          <body>
+                            <h1 align='center'>Миссия колонизация Марса</h1>
+                            <p>И на Марсе будут яблони цвести</p>
+                            <img src={img_adress} alt='Некорректно введена специальность'>
+                          </body>
+                        </html>'''
+
 
 if __name__ == '__main__':
     app.run(port=8080, host='')
