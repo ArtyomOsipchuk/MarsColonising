@@ -1,4 +1,4 @@
-from flask import Flask, url_for
+from flask import Flask, url_for, render_template
 
 app = Flask(__name__)
 
@@ -152,29 +152,9 @@ def peizaahi_marsa():
                         </html>'''
 
 
-@app.route('/')
-def peizaahi_marsa():
-    prof = ''
-    img_adress = 'static/img/sci.png'
-    if 'инженер' in prof.lower():
-        img_adress = 'static/img/ing.png'
-    return f'''<!doctype html>
-                        <html lang="en">
-                          <head>
-                            <meta charset="utf-8">
-                            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-                            <link rel="stylesheet" 
-                            href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
-                            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
-                            crossorigin="anonymous">
-                            <title></title>
-                          </head>
-                          <body>
-                            <h1 align='center'>Миссия колонизация Марса</h1>
-                            <p>И на Марсе будут яблони цвести</p>
-                            <img src={img_adress} alt='Некорректно введена специальность'>
-                          </body>
-                        </html>'''
+@app.route('/training/<prof>')
+def trenirovki_v_polyote(prof):
+    return render_template('first.html', prof=prof)
 
 
 if __name__ == '__main__':

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Тренировки в полёте</title>>
+</head>
+    <body>
+    {% extends "base.html" %}
+
+    {% block content %}
+    <h1>Миссия колонизация Марса</h1>
+    <p style="static/css/style.css">И на Марсе будут яблони цвести</p>
+    {% if 'инженер' in prof.lower() %}
+        <img src='static/img/ing.png' alt='Некорректно введена специальность'>
+    {% else %}
+        <img src='static/img/sci.png' alt='Некорректно введена специальность'>
+    {% endif %}
+    {% endblock %}
+    </body>
+</html>
