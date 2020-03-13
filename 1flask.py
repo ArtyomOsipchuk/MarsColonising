@@ -28,7 +28,7 @@ def image():
                   </head>
                   <body>
                     <h1>Жди нас, Марс!</h1>
-                    <h2><img src= "{url_for('static', filename='img/mars.png')}" alt="Здесь был марс"></h2>
+                    <h2><img src= "{url_for('static', filename='static/img/mars.png')}" alt="Здесь был марс"></h2>
                     <div>Вот она какая, красная планета.</div>
                   </body>
                 </html>"""
@@ -48,9 +48,9 @@ def color():
                         <title>Колонизация</title>
                       </head>
                       <body>
-                        <link rel="stylesheet" type="text/css" href="{url_for('static', filename='css/style.css')}" />
+                        <link rel="stylesheet" type="text/css" href="{url_for('static', filename='static/css/style.css')}" />
                         <h1>Жди нас Марс!</h1>
-                        <img src= "{url_for('static', filename='img/mars.png')}" alt="Здесь был марс">
+                        <img src= "{url_for('static', filename='static/img/mars.png')}" alt="Здесь был марс">
                         <div class="alert alert-primary" role="alert">
                             Человечество вырастает из детства.
                             </div>
